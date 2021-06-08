@@ -4,18 +4,17 @@ export interface EncodeOptions {
   digest: string;
   rounds: number;
   salt: string;
-  hash: string;
 }
 
 export const reshapeBase64 = (b64str: string) => {
-    const noPad = b64str.replace(/={1,2}$/, '');
-    const noWs = noPad.replace(/=\n$/, '');
-    const noPlus = noWs.replace('+', '.');
+    const noWs = b64str.trim();
+    const noPad = noWs.replace(/={1,2}$/, '');
+    const noPlus = noPad.replace(/\+/g, '.');
     return Buffer.from(noPlus).toString('ascii');
 }
 
 export const unshapeBase64 = (b64str: string) => {
-  return b64str.replace('.', '+');
+  return b64str.replace(/\./g, '+').trim();
 }
 
 export const extractDigest = (algorithm: string) => {
@@ -35,7 +34,7 @@ export const decodeHash = (encodedHash: string) => {
   };
 }
 
-export const encode = (password: string, { digest, rounds, salt, hash }: EncodeOptions, keylen: number) => {
+export const encode = (password: string, { digest, rounds, salt }: EncodeOptions, keylen: number) => {
   const encodedSalt = Buffer.from(unshapeBase64(salt), 'base64');
   const pbkdf2Buffer = pbkdf2Sync(password, encodedSalt, rounds, keylen, digest);
   const base64str = pbkdf2Buffer.toString('base64');
@@ -44,6 +43,6 @@ export const encode = (password: string, { digest, rounds, salt, hash }: EncodeO
 
 export const verify = (password: string, encodedHash: string, keylen = 64) => {
   const { digest, rounds, salt, hash } = decodeHash(encodedHash);
-  const encodedPassword = encode(password, { digest, rounds, salt, hash }, keylen);
+  const encodedPassword = encode(password, { digest, rounds, salt }, keylen);
   return hash === encodedPassword;
 };
