@@ -1,6 +1,6 @@
 {
   "name": "node-passlib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate and verify python-passlib compatible PBKDF2 hashes.",
   "main": "dist/index.js",
   "scripts": {
