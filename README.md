@@ -24,3 +24,10 @@ nodePasslib.verify('yourpassword', pbkdf2Hash);
 nodePasslib.verify('wrongpassword', pbkdf2Hash);
 // false
 ```
+
+Passlib 1.7.4 default algorithm is `pbkdf2_sha512` with a `keylen` of 64 for the `SHA512` digest. If you want to verify a different algorithm you may have to specify the `keylen`.
+
+```typescript
+const sha256Hash = '$pbkdf2-sha256$29000$49wbQyil1JqTcs7Z23tvTQ$EqGpkZH6Gb2ZE92/VY7B1uuO.CUR8xc4bU.TNsDIekI';
+nodePasslib.verify('yourpassword', sha256Hash, 32);
+```
