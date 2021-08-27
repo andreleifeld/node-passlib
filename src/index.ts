@@ -1,3 +1,4 @@
-import { verify } from './pbkdf2';
+import { verify, build, encode } from './pbkdf2';
 
-export default { verify };
+export { verify, build, encode };
+export default { verify, build, encode };
