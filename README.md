@@ -1,5 +1,6 @@
 # node-passlib
-Generate and verify python-passlib compatible PBKDF2 hashes.
+
+Unofficial library to generate and verify python-passlib compatible PBKDF2 hashes.
 
 This module provides a verification function to verify python-passlibs (https://passlib.readthedocs.io/) encoded PBKDF2-hashes.
 Tested with passlib 1.7.4 and PBKDF2-SHA512 algorithm.
@@ -33,5 +34,7 @@ verify('yourpassword', sha256Hash, 32);
 ```
 
 ## Disclaimer
+
+UNOFFICIAL - USE AT YOUR OWN RISK!
 
 Using this lib is not as save as passlib itself. Passlib does way more security stuff like preventing timing attacks in the `verify` method. It's not recommended to use this lib in production if you are not aware of the risk.
