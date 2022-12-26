@@ -1,10 +1,12 @@
 {
   "name": "node-passlib",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Generate and verify python-passlib compatible PBKDF2 hashes.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "dist": "npx rollup --config",
+    "dist": "rollup --config",
     "test": "ts-mocha -p test/tsconfig.json test/**/*.spec.ts"
   },
   "repository": {
@@ -34,12 +36,13 @@
     "@rollup/plugin-typescript": "^8.2.1",
     "@types/expect": "^24.3.0",
     "@types/mocha": "^8.2.2",
+    "@types/node": "^18.11.18",
     "mocha": "^9.0.0",
-    "rollup": "^2.51.1",
+    "rollup": "^3.8.1",
     "ts-mocha": "^8.0.0",
-    "typescript": "^4.3.2"
+    "typescript": "^4.9.4"
   },
   "dependencies": {
-    "tslib": "^2.2.0"
+    "tslib": "^2.4.1"
   }
 }
