@@ -1,29 +1,30 @@
 {
   "compilerOptions": {
-    "outDir": "dist/",
-    "allowSyntheticDefaultImports": true,
     "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "checkJs": false,
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "noEmitHelpers": true,
     "lib": ["es2016", "es2017.object"],
-    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
+    "noEmitHelpers": true,
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "strictNullChecks": true,
+    "outDir": "dist/",
     "pretty": true,
     "removeComments": true,
+    "resolveJsonModule": true,
     "sourceMap": true,
-    "baseUrl": "."
+    "strictNullChecks": true,
+    "target": "es5"
   }
 }

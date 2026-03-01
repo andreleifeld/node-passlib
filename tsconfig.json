@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
     "declaration": true,
-    "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
+    "incremental": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es2017"
   },
-  "include": [
-    "./src"
-  ]
+  "include": ["./src"]
 }
+

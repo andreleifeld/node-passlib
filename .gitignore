@@ -5,9 +5,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+
+# Build and package manager
 .yarn
 .yarnrc.yml
 .rollup.cache/
+.pnp.*
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -103,3 +107,7 @@ typings/
 
 # TernJS port file
 .tern-port
+
+# Editor settings
+.vim/
+.vscode/
